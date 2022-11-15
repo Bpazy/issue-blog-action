@@ -9705,9 +9705,9 @@ async function run() {
     console.log(`startIdx: ${startIdx}, endIdx: ${endIdx}`);
 
     const octokit = github.getOctokit(core.getInput('githubToken'))
-    console.log(`We can even get context data, like the repo: ${github.context.repo}`)
+    console.log(`We can even get context data, like the repo: ${JSON.stringify(github.context.repo)}`)
     const issues = octokit.rest.issues.listForRepo({owner: github.context.repo.owner, repo: github.context.repo.repo});
-    console.log(`Got issues: ${issues}`);
+    console.log(`Got issues: ${JSON.stringify(issues)}`);
 }
 
 try {
