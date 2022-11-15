@@ -3,7 +3,7 @@ description: 'issue-list-action'
 inputs:
   githubToken: 
     description: 'GITHUB_TOKEN'
-    default: ${{ secrets.GITHUB_TOKEN }}
+    required: true
 runs:
   using: 'node16'
   main: 'index.js'
