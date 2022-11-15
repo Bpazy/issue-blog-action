@@ -1,2 +1,2 @@
-# issue-list-readme
+# issue-list-action
 Display issues on README

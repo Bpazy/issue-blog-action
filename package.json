@@ -1,0 +1,25 @@
+{
+  "name": "issue-list-action",
+  "version": "1.0.0",
+  "description": "Display issues on README",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "ncc build index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bpazy/issue-list-readme.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bpazy/issue-list-readme/issues"
+  },
+  "homepage": "https://github.com/Bpazy/issue-list-readme#readme",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1"
+  }
+}
