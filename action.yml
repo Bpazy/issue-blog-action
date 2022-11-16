@@ -1,5 +1,5 @@
-name: 'issue-list-action'
-description: 'issue-list-action'
+name: 'issue-blog-action'
+description: 'issue-blog-action'
 inputs:
   GITHUB_TOKEN:
     description: 'GITHUB_TOKEN'

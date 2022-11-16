@@ -1,5 +1,5 @@
 {
-  "name": "issue-list-action",
+  "name": "issue-blog-action",
   "version": "1.0.0",
   "description": "Display issues on README",
   "main": "index.js",
