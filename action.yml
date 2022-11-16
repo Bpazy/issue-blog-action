@@ -1,5 +1,6 @@
 name: 'issue-blog-action'
-description: 'issue-blog-action'
+author: 'Bpazy'
+description: 'Update issue blog to README'
 inputs:
   GITHUB_TOKEN:
     description: 'GITHUB_TOKEN'
@@ -11,3 +12,6 @@ inputs:
 runs:
   using: 'node16'
   main: 'dist/index.js'
+branding:
+  icon: book-open
+  color: blue
