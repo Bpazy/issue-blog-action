@@ -1,5 +1,34 @@
-# issue-list-action
-Display issues on README
+# issue-blog-action
+Display issue blog on README.
+
+**Example preview:** [Bpazy/blog](https://github.com/Bpazy/blog)
+
+## Usage
+1. First append `<!--START_SECTION:blog-->` and `<!--END_SECTION:blog-->` into your README. Like this:
+```
+<!--START_SECTION:blog-->
+
+<!--END_SECTION:blog-->
+```
+2. And then create Github Actions prifile like this:
+```yaml
+name: Update latest blog
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0,30 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Update latest blog
+    steps:
+      - uses: actions/checkout@v3
+      - uses: Bpazy/issue-list-action@master
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
 
 ## Development dependency
 ```sh
