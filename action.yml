@@ -1,10 +1,13 @@
 name: 'issue-list-action'
 description: 'issue-list-action'
 inputs:
-  githubToken: 
+  GITHUB_TOKEN:
     description: 'GITHUB_TOKEN'
     required: true
+  COMMIT_MSG:
+    description: 'message when update issue activity'
+    required: false
+    default: 'Update README with the recent issue activity'
 runs:
   using: 'node16'
   main: 'dist/index.js'
-  
