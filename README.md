@@ -10,7 +10,7 @@ Display issue blog on README.
 
 <!--END_SECTION:blog-->
 ```
-2. And then create Github Actions prifile like this:
+2. And then create Github Actions profile like this:
 ```yaml
 name: Update latest blog
 
