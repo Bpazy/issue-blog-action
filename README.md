@@ -25,12 +25,19 @@ jobs:
     name: Update latest blog
     steps:
       - uses: actions/checkout@v3
-      - uses: Bpazy/issue-blog-action@v1.0.0 # Bpazy/issue-blog-action@master for beta
+      - uses: Bpazy/issue-blog-action@v1.0.1 # Bpazy/issue-blog-action@master for beta
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
+| All inputs   | Description                                                           | Default                                      |
+|--------------|-----------------------------------------------------------------------|----------------------------------------------|
+| GITHUB_TOKEN | Token for commit file. Should always be `${{ secrets.GITHUB_TOKEN }}` | ${{ secrets.GITHUB_TOKEN }}                  |
+| COMMIT_MSG   | Message when update issue activity                                    | Update README with the recent issue activity |
+| NUMBER       | Issues number. Max: 100                                               | 20                                           |
+
 ## Development dependency
+
 ```sh
 npm install -g @vercel/ncc
 npm install

@@ -9,6 +9,10 @@ inputs:
     description: 'message when update issue activity'
     required: false
     default: 'Update README with the recent issue activity'
+  NUMBER:
+    description: 'issues number. Max: 100'
+    required: false
+    default: 20
 runs:
   using: 'node16'
   main: 'dist/index.js'

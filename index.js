@@ -6,6 +6,7 @@ const dayjs = require('dayjs');
 
 const COMMIT_MSG = core.getInput("COMMIT_MSG");
 const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
+const NUMBER = core.getInput('NUMBER');
 
 const START_FLAG = "<!--START_SECTION:blog-->";
 const END_FLAG = "<!--END_SECTION:blog-->";
@@ -16,7 +17,7 @@ async function run() {
         owner: github.context.repo.owner,
         repo: github.context.repo.repo,
         sort: 'updated-desc',
-        per_page: 20
+        per_page: NUMBER,
     });
     core.debug(`Got issues: ${JSON.stringify(issuesInfo)}`);
     const issues = issuesInfo.data;
