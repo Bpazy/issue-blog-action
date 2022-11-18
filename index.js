@@ -22,8 +22,8 @@ async function run() {
     core.debug(`Got issues: ${JSON.stringify(issuesInfo)}`);
     const issues = issuesInfo.data;
     if (issues.length === 0) {
-        core.info(`Get no issues, exit`);
-        return
+        console.log(`Get no issues, exit`);
+        return;
     }
 
     const readmeContent = fs.readFileSync("./README.md", "utf-8").split("\n");
@@ -37,11 +37,12 @@ async function run() {
     readmeContent.splice(startIdx, 0, preArr.join('\n'));
     issues.forEach((issue, idx) => readmeContent.splice(startIdx + idx + preArr.length - 1, 0, formatIssue(idx, issue)));
     if (oldReadmeContent.join("\n") === readmeContent.join("\n")) {
-        console.log('No updated.')
-    } else {
-        fs.writeFileSync("./README.md", readmeContent.join("\n"));
-        await commitFile();
+        console.log('No updated.');
+        return;
     }
+
+    fs.writeFileSync("./README.md", readmeContent.join("\n"));
+    await commitFile();
 }
 
 function formatIssue(idx, issue) {
