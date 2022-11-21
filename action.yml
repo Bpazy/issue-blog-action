@@ -12,7 +12,11 @@ inputs:
   NUMBER:
     description: 'issues number. Max: 100'
     required: false
-    default: 20
+    default: '20'
+  SUMMARY_LENGTH:
+    description: 'Summary default char length'
+    required: false
+    default: '100'
 runs:
   using: 'node16'
   main: 'dist/index.js'

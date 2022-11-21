@@ -7,6 +7,7 @@ const dayjs = require('dayjs');
 const COMMIT_MSG = core.getInput("COMMIT_MSG");
 const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
 const NUMBER = core.getInput('NUMBER');
+const SUMMARY_LENGTH = core.getInput('SUMMARY_LENGTH');
 
 const START_FLAG = "<!--START_SECTION:blog-->";
 const END_FLAG = "<!--END_SECTION:blog-->";
@@ -48,7 +49,7 @@ async function run() {
 function formatIssue(idx, issue) {
     const updateTime = `${dayjs(issue.updated_at).format('YYYY-MM-DD')}`;
     const title = `[${issue.title}](${issue.html_url})`;
-    const summary = issue.body ? issue.body.trim().replaceAll('\r\n', ' ').substring(0, 50) : '';
+    const summary = issue.body ? issue.body.trim().replaceAll('\r\n', ' ').substring(0, parseInt(SUMMARY_LENGTH)) : '';
     return `| ${updateTime} | ${title} | ${summary} |`;
 }
 
