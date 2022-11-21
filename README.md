@@ -25,7 +25,7 @@ jobs:
     name: Update latest blog
     steps:
       - uses: actions/checkout@v3
-      - uses: Bpazy/issue-blog-action@v1.0.1 # Bpazy/issue-blog-action@master for beta
+      - uses: Bpazy/issue-blog-action@v1.0.2 # Bpazy/issue-blog-action@master for beta
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
