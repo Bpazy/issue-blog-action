@@ -36,8 +36,8 @@ jobs:
 | COMMIT_MSG     | Message when update issue activity                                    | Update README with the recent issue activity |
 | NUMBER         | Issues number. Max: 100                                               | 20                                           |
 | SUMMARY_LENGTH | Summary default char length                                           | 100                                          |
-| OWNER          | Github owner. Not Required                                            | Current owner                                |
-| REPO           | Github repo. Not Required                                             | Current repo                                 |
+| OWNER          | Github owner                                                          | Current owner                                |
+| REPO           | Github repo                                                           | Current repo                                 |
 
 ## Development dependency
 
