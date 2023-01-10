@@ -17,6 +17,12 @@ inputs:
     description: 'Summary default char length'
     required: false
     default: '100'
+  OWNER:
+    description: 'github owner. Such as "Bpazy"'
+    required: false
+  REPO:
+    description: 'github repo. Such as "issue-list-action"'
+    required: false
 runs:
   using: 'node16'
   main: 'dist/index.js'

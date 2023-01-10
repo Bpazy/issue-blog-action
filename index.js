@@ -8,6 +8,8 @@ const COMMIT_MSG = core.getInput("COMMIT_MSG");
 const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
 const NUMBER = core.getInput('NUMBER');
 const SUMMARY_LENGTH = core.getInput('SUMMARY_LENGTH');
+const OWNER = core.getInput('OWNER');
+const REPO = core.getInput('REPO');
 
 const START_FLAG = "<!--START_SECTION:blog-->";
 const END_FLAG = "<!--END_SECTION:blog-->";
@@ -15,8 +17,8 @@ const END_FLAG = "<!--END_SECTION:blog-->";
 async function run() {
     const octokit = github.getOctokit(GITHUB_TOKEN);
     const issuesInfo = await octokit.rest.issues.listForRepo({
-        owner: github.context.repo.owner,
-        repo: github.context.repo.repo,
+        owner: OWNER ? OWNER : github.context.repo.owner,
+        repo: REPO ? REPO : github.context.repo.repo,
         sort: 'updated-desc',
         per_page: NUMBER,
     });

@@ -30,12 +30,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-| All inputs     | Description                                                           | Default                                      |
-|----------------|-----------------------------------------------------------------------|----------------------------------------------|
-| GITHUB_TOKEN   | Token for commit file. Should always be `${{ secrets.GITHUB_TOKEN }}` | ${{ secrets.GITHUB_TOKEN }}                  |
-| COMMIT_MSG     | Message when update issue activity                                    | Update README with the recent issue activity |
-| NUMBER         | Issues number. Max: 100                                               | 20                                           |
+| All inputs   | Description                                                           | Default                                      |
+|--------------|-----------------------------------------------------------------------|----------------------------------------------|
+| GITHUB_TOKEN | Token for commit file. Should always be `${{ secrets.GITHUB_TOKEN }}` | ${{ secrets.GITHUB_TOKEN }}                  |
+| COMMIT_MSG   | Message when update issue activity                                    | Update README with the recent issue activity |
+| NUMBER       | Issues number. Max: 100                                               | 20                                           |
 | SUMMARY_LENGTH | Summary default char length                                           | 100                                          |
+| OWNER        | Github owner. Not Required                                            | Current owner                                |
+| REPO         | Github repo. Not Required                                             | Current repo                                 |
 
 ## Development dependency
 
