@@ -10994,11 +10994,13 @@ const NUMBER = core.getInput('NUMBER');
 const SUMMARY_LENGTH = core.getInput('SUMMARY_LENGTH');
 const OWNER = core.getInput('OWNER');
 const REPO = core.getInput('REPO');
+const GITHUB_NAME = core.getInput('GITHUB_NAME');
+const GITHUB_EMAIL = core.getInput('GITHUB_EMAIL');
 
 const START_FLAG = "<!--START_SECTION:blog-->";
 const END_FLAG = "<!--END_SECTION:blog-->";
 
-async function run() {
+async function run () {
     const octokit = github.getOctokit(GITHUB_TOKEN);
     const issuesInfo = await octokit.rest.issues.listForRepo({
         owner: OWNER ? OWNER : github.context.repo.owner,
@@ -11053,13 +11055,13 @@ function findIndex(readmeContent) {
 }
 
 const commitFile = async () => {
-    await exec.exec("git", [
-        "config",
-        "--global",
-        "user.email",
-        "41898282+github-actions[bot]@users.noreply.github.com",
-    ]);
-    await exec.exec("git", ["config", "--global", "user.name", "readme-bot"]);
+    if (GITHUB_NAME && GITHUB_EMAIL) {
+        await exec.exec("git", ["config", "--global", "user.email", GITHUB_EMAIL]);
+        await exec.exec("git", ["config", "--global", "user.name", GITHUB_NAME]);
+    } else {
+        await exec.exec("git", ["config", "--global", "user.email", "41898282+github-actions[bot]@users.noreply.github.com"]);
+        await exec.exec("git", ["config", "--global", "user.name", "readme-bot"]);
+    }
     await exec.exec("git", ["add", "README.md"]);
     await exec.exec("git", ["commit", "-m", COMMIT_MSG]);
     await exec.exec("git", ["push"]);
