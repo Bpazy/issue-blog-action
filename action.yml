@@ -23,6 +23,14 @@ inputs:
   REPO:
     description: 'github repo. Such as "issue-list-action"'
     required: false
+  GITHUB_NAME:
+    description: 'Your Github name, used to commit when Github Action running'
+    required: false
+    default: ''
+  GITHUB_EMAIL:
+    description: 'Your Github email, used to commit when Github Action running'
+    required: false
+    default: ''
 runs:
   using: 'node16'
   main: 'dist/index.js'
