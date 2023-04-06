@@ -1,7 +1,7 @@
 # issue-blog-action
 Write blogs with `Github Issues`. The Action helps you display your blogs on `README.md`.
 
-**Example preview:** [Bpazy/blog](https://github.com/Bpazy/blog)
+**Example preview:** [Bpazy/blog](https://github.com/Bpazy/blog#recent-blogs)
 
 ## Usage
 1. First append `<!--START_SECTION:blog-->` and `<!--END_SECTION:blog-->` into your README. Like this:
